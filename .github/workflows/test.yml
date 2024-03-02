@@ -15,5 +15,8 @@ jobs:
         run: |
           sudo xcode-select --switch "/Applications/Xcode_15.2.app"
       - uses: actions/checkout@v4
+      - name: skip validation
+        run: |
+          defaults write com.apple.dt.Xcode IDESkipPackagePluginFingerprintValidatation -bool YES
       - name: Make test
         run: make test
