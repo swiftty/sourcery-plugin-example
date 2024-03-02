@@ -1,0 +1,9 @@
+import Foundation
+
+<%_ for target in types.structs { -%>
+extension <%= target.name %> {
+    var name: String {
+        String(describing: self)
+    }
+}
+<%_ } -%>
