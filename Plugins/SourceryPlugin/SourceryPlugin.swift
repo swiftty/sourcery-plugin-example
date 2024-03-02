@@ -38,6 +38,7 @@ struct SourceryPlugin: BuildToolPlugin {
                     "--buildPath", buildPath,
                     "--sources", fileManager.sourceDirectory(of: target.directory),
                     "--output", output,
+                    "--verbose",
                 ] + (config?.templates.map {
                     ["--templates", projectPath.appending([$0])]
                 } ?? []),
